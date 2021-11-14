@@ -253,7 +253,7 @@ def recording_movie(video,count):
         max_index=argrelmax(np.array(f_in_center))
         min_index=argrelmin(np.array(f_in_center))
 
-        fig=plt.figure()
+        #fig=plt.figure()
 
         plt.text(0,0,'speed_avg={}[cm/s]'.format(speed___avg/51))
 
@@ -359,7 +359,8 @@ if __name__ == '__main__':
         
                 video=cv2.VideoWriter("movie/{}.mp4".format(video_list[count]), fourcc, fps, (w, h)) # 動画の仕様（ファイル名、fourcc, FPS, サイズ）
                 
-                
+                fig=plt.figure()
+
 
                 #p=Process(target=recording_sound, args=(video_list,count,all_start))
                 p=Process(target=speech2text_20211102_new.main, args=[all_start])
